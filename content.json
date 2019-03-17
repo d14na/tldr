@@ -1,0 +1,74 @@
+{
+ "address": "1TLDRQxAhGgkhF7FZU2dmUuSYvnhFSeFY",
+ "address_index": 14886911,
+ "background-color": "#FFF",
+ "description": "Eternal Posting Manager",
+ "favicon": "images/favicon.png",
+ "files": {
+  "LICENSE": {
+   "sha512": "772987556efbdb6ceba6af1b23597c76f2db3bf5d1a0b74f158046134954db0e",
+   "size": 1062
+  },
+  "README.md": {
+   "sha512": "f921c821e9bcd2f7e3bc3834b4ff74c2ae579757988dbe43a95e8e7e064f8734",
+   "size": 46
+  },
+  "abi/TLDR.json": {
+   "sha512": "fdc16723b4081582810c6aa028619abde98b68d66464f9b4e0a1e168ca4ed373",
+   "size": 4028
+  },
+  "contracts/TLDR.sol": {
+   "sha512": "fedbab3b4385cebe29ab3d7f4eec2338faeea50db666e6fddc78d920d160c24d",
+   "size": 11524
+  },
+  "css/main.css": {
+   "sha512": "d8d33ca02cb6c5e0ca33204d92284c7de1000936332a1bf95fb195aeb05013ef",
+   "size": 1105
+  },
+  "favicon.ico": {
+   "sha512": "4d5e4a9c6f2e0be4f57ce6cf0688ed2e5146ffb6db3255060b2871f34f05347d",
+   "size": 4286
+  },
+  "images/favicon.png": {
+   "sha512": "85e9278878c0f9a2c863c15e176894bcf57369f4efeb480fc177a74b4de126a8",
+   "size": 929
+  },
+  "images/icon.png": {
+   "sha512": "6f5695a8fd855ea3526bfd24a2cf88439a6656b57fa872bff2840c9a6df8fd66",
+   "size": 9279
+  },
+  "images/logo.svg": {
+   "sha512": "e12da21c71894ed1a0a3e29e124ea9bcc28abf544067e4106a3adffac2fb74a4",
+   "size": 3797
+  },
+  "index.html": {
+   "sha512": "da2c628188dea8b7b7176416b47b08b3815b99d26f057da195db0d44f8a878c8",
+   "size": 2257
+  },
+  "js/main.js": {
+   "sha512": "732e2d194a1ffdd23e473c1b1910cb2b4f3936b3233ada843374046c35f88c05",
+   "size": 8442
+  },
+  "libs/buffer.js": {
+   "sha512": "95676ea8b2f83c4703d844d156f12e334c8779dea73a64d42c5a8d799fc3aa26",
+   "size": 52779
+  },
+  "libs/marked.min.js": {
+   "sha512": "6fca751c5f3c851fffe6a8fbf7798d47fd7b0e2be85356ae9aae47f5876ad5a0",
+   "size": 21525
+  }
+ },
+ "ignore": "(\\.git)",
+ "inner_path": "content.json",
+ "modified": 1552770265,
+ "postmessage_nonce_security": true,
+ "signers_sign": "G1xIVhFAK88MAg0PZrygvXRCLSfXNL7nVSNqmL0EUwlvEOkf0wFTb1WNwMqB72OiTXLB0oss0xy4AmJyKANiyx8=",
+ "signs": {
+  "1TLDRQxAhGgkhF7FZU2dmUuSYvnhFSeFY": "HNKF/2RoJmXTHcbbSL7eXCrKPcF0NZvQAkRV30EXvXZNA/AB/qav+pWSBfFOEl4y1juHGcMnVuRM8HghAApmGQc="
+ },
+ "signs_required": 1,
+ "title": "TL;DR",
+ "translate": ["js/all.js"],
+ "viewport": "width=device-width, initial-scale=1.0",
+ "zeronet_version": "0.6.4"
+}

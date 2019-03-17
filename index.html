@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>TL;DR</title>
+
+    <link href="https://cdn.0net.io/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://cdn.0net.io/libs/bootstrap/4.1.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/main.css" type="text/css" />
+</head>
+
+<body>
+
+<div id="app">
+    <header>
+        <a href="/">
+            <img class="logo" src="images/logo.svg" height="48px" width="48px" />
+        </a>
+
+        <div class="app-header">
+            <h2>{{appTitle}}</h2>
+            <small class="text-muted">{{appDesc}}</small>
+        </div>
+
+        <div class="col-5">
+            <input
+                type="text"
+                class="form-control form-control-sm"
+                id="searchById"
+                aria-describedby="searchById"
+                placeholder="Paste an ID here"
+                v-model="searchId"
+                v-on:change="loadPost"
+                v-on:focus="searchId = ''">
+
+            <button class="btn btn-success btn-sm btn-block mt-1" @click="postIt">Post It!</button>
+        </div>
+    </header>
+
+    <div class="px-2 mt-2">
+        <input
+            type="text"
+            class="form-control form-control-sm"
+            id="title"
+            aria-describedby="title"
+            placeholder="Post title"
+            v-model="postTitle">
+    </div>
+
+    <div class="containers">
+        <div class="container">
+            <textarea id="input" v-model="postBody"></textarea>
+        </div>
+
+        <div class="container">
+            <div id="preview" class="pane">
+                <noscript>
+                    <h2>You'll need to enable Javascript to use this tool.</h2>
+                </noscript>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Core JS Libraries -->
+<script src="https://cdn.0net.io/libs/jquery/3.3.1/js/jquery.min.js"></script>
+<script src="https://cdn.0net.io/libs/bootstrap/4.0.0/js/bootstrap.js"></script>
+<script src="https://cdn.0net.io/libs/vue/2.5.17/js/vue.min.js"></script>
+<script src="https://cdn.0net.io/libs/zero-api/18.9.28/js/zero-api.js"></script>
+<!-- <script src="https://cdn.0net.io/libs/web3/1.0.0/js/web3.min.js"></script> -->
+<script src="https://cdn.0net.io/libs/ethers/4.0.7/js/ethers.min.js"></script>
+<script src="https://cdn.0net.io/libs/moment/2.22.2/js/moment.min.js"></script>
+<script src="https://cdn.0net.io/libs/numeral/2.0.6/js/numeral.min.js"></script>
+
+<!-- Local JS Libraries -->
+<script src="libs/buffer.js"></script>
+<script src="libs/marked.min.js"></script>
+
+<!-- Main JS -->
+<script src="js/main.js"></script>
+
+</body>
+</html>
