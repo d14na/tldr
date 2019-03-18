@@ -4,13 +4,21 @@
 
 ### Where Can I Find It?
 
+> Latest __STABLE__ release is __v19.3.18__
+
 - __http://127.0.0.1:43110/tldr.bit__ - Zeronet _( using localhost )_
 
 - __https://0net.io/tldr.bit__ - Zeronet _( using Clearnet / Internet proxy )_
 
-### Is This Smart Contract Safe?
+> Latest __IPFS__ hash is __QmfAbFf4pnmAW9Ya6ogsrUJ5VFdRthKnuGxWmNJ8zRFcoz__
 
-Yes! Check out the code-verified smart contract on Etherscan.
+- [Connect using __IPFS__ powered by __cloudflare-ipfs.com__](https://cloudflare-ipfs.com/ipfs/QmfAbFf4pnmAW9Ya6ogsrUJ5VFdRthKnuGxWmNJ8zRFcoz/)
+
+- [Connect using __IPFS__ powered by __ipfs.infura.io__](https://ipfs.infura.io/ipfs/QmfAbFf4pnmAW9Ya6ogsrUJ5VFdRthKnuGxWmNJ8zRFcoz/)
+
+### Is This DApp Safe & Secure?
+
+Absolutely! Check out the code-verified smart contract on Etherscan.
 
 #### [0x68120110506DcC0c95f6ac991Bae9340aeCeEd73](https://etherscan.io/address/0x68120110506DcC0c95f6ac991Bae9340aeCeEd73#code)
 
@@ -18,13 +26,13 @@ Yes! Check out the code-verified smart contract on Etherscan.
 
 ##### For your development needs, a Ropsten Edition has been deployed to IPFS.
 
-> Latest release is __v19.3.17__
+> Latest __STABLE__ release is __v19.3.18__
 
-> Latest hash is __QmVhMLzxB3LDnYWcbi61EJ6XFW9GLiGemmscvrQnLB97w5__
+> Latest __IPFS__ hash is __QmT8fPFsPFYpoak9iwKsgRsjye6zWHA4ybLNaFFbWN9TYA__
 
-- [Connect using __IPFS__ powered by __cloudflare-ipfs.com__](https://cloudflare-ipfs.com/ipfs/QmVhMLzxB3LDnYWcbi61EJ6XFW9GLiGemmscvrQnLB97w5/)
+- [Connect using __IPFS__ powered by __cloudflare-ipfs.com__](https://cloudflare-ipfs.com/ipfs/QmT8fPFsPFYpoak9iwKsgRsjye6zWHA4ybLNaFFbWN9TYA/)
 
-- [Connect using __IPFS__ powered by __ipfs.infura.io__](https://ipfs.infura.io/ipfs/QmVhMLzxB3LDnYWcbi61EJ6XFW9GLiGemmscvrQnLB97w5/)
+- [Connect using __IPFS__ powered by __ipfs.infura.io__](https://ipfs.infura.io/ipfs/QmT8fPFsPFYpoak9iwKsgRsjye6zWHA4ybLNaFFbWN9TYA/)
 
 __Etherscan Code-verified Smart Contract__  
 __[0xa5366C3040AEA68493866322115fe510AF501e7F](https://ropsten.etherscan.io/address/0xa5366C3040AEA68493866322115fe510AF501e7F#code)__

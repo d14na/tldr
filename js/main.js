@@ -214,7 +214,8 @@ const vueAppManager = {
 
             const abi = [{constant:false,inputs:[],name:"acceptOwnership",outputs:[],payable:false,stateMutability:"nonpayable",type:"function"},{constant:false,inputs:[{name:"_title",type:"string"},{name:"_body",type:"bytes"}],name:"savePost",outputs:[{name:"success",type:"bool"}],payable:false,stateMutability:"nonpayable",type:"function"},{constant:false,inputs:[{name:"_newSuccessor",type:"address"}],name:"setSuccessor",outputs:[{name:"success",type:"bool"}],payable:false,stateMutability:"nonpayable",type:"function"},{constant:false,inputs:[{name:"_tokenAddress",type:"address"},{name:"_tokens",type:"uint256"}],name:"transferAnyERC20Token",outputs:[{name:"success",type:"bool"}],payable:false,stateMutability:"nonpayable",type:"function"},{constant:false,inputs:[{name:"_newOwner",type:"address"}],name:"transferOwnership",outputs:[],payable:false,stateMutability:"nonpayable",type:"function"},{inputs:[],payable:false,stateMutability:"nonpayable",type:"constructor"},{payable:true,stateMutability:"payable",type:"fallback"},{anonymous:false,inputs:[{indexed:true,name:"postId",type:"bytes32"},{indexed:true,name:"owner",type:"address"},{indexed:false,name:"body",type:"bytes"}],name:"Posted",type:"event"},{anonymous:false,inputs:[{indexed:true,name:"_from",type:"address"},{indexed:true,name:"_to",type:"address"}],name:"OwnershipTransferred",type:"event"},{constant:true,inputs:[{name:"_owner",type:"address"},{name:"_title",type:"string"}],name:"calcPostId",outputs:[{name:"postId",type:"bytes32"}],payable:false,stateMutability:"view",type:"function"},{constant:true,inputs:[{name:"_postId",type:"bytes32"}],name:"getPost",outputs:[{name:"location",type:"address"},{name:"blockNum",type:"uint256"}],payable:false,stateMutability:"view",type:"function"},{constant:true,inputs:[],name:"getPredecessor",outputs:[{name:"",type:"address"}],payable:false,stateMutability:"view",type:"function"},{constant:true,inputs:[],name:"getRevision",outputs:[{name:"",type:"uint256"}],payable:false,stateMutability:"view",type:"function"},{constant:true,inputs:[],name:"getSuccessor",outputs:[{name:"",type:"address"}],payable:false,stateMutability:"view",type:"function"},{constant:true,inputs:[],name:"newOwner",outputs:[{name:"",type:"address"}],payable:false,stateMutability:"view",type:"function"},{constant:true,inputs:[],name:"owner",outputs:[{name:"",type:"address"}],payable:false,stateMutability:"view",type:"function"},{constant:true,inputs:[{name:"_interfaceID",type:"bytes4"}],name:"supportsInterface",outputs:[{name:"",type:"bool"}],payable:false,stateMutability:"pure",type:"function"}]
 
-            const contractAddress = "0xa5366C3040AEA68493866322115fe510AF501e7F"
+            const contractAddress = '0x68120110506DcC0c95f6ac991Bae9340aeCeEd73'
+            // const contractAddress = '0xa5366C3040AEA68493866322115fe510AF501e7F' // ROPSTEN
 
             // There is only ever up to one account in MetaMask exposed
             const signer = provider.getSigner()
@@ -238,7 +239,6 @@ const vueAppManager = {
 
             // /* Initialize provider. */
             // let provider = null
-            // // NOTE We are curretnly still deployed to Ropsten (Testnet)
             // // const provider = ethers.getDefaultProvider('ropsten')
             // // const provider = new ethers.providers.Web3Provider(web3.currentProvider)
             //
@@ -321,12 +321,13 @@ const vueAppManager = {
             }
 
             /* Initialize provider. */
-            // NOTE We are curretnly still deployed to Ropsten (Testnet)
-            const provider = ethers.getDefaultProvider('ropsten')
+            const provider = ethers.getDefaultProvider()
+            // const provider = ethers.getDefaultProvider('ropsten')
             // const provider = new ethers.providers.Web3Provider(web3.currentProvider)
 
             /* Set contract address. */
-            const contractAddress = '0xa5366C3040AEA68493866322115fe510AF501e7F'
+            const contractAddress = '0x68120110506DcC0c95f6ac991Bae9340aeCeEd73'
+            // const contractAddress = '0xa5366C3040AEA68493866322115fe510AF501e7F' // ROPSTEN
 
             /* Set contract ABI. */
             const abi = [{constant:false,inputs:[],name:"acceptOwnership",outputs:[],payable:false,stateMutability:"nonpayable",type:"function"},{constant:false,inputs:[{name:"_title",type:"string"},{name:"_body",type:"bytes"}],name:"savePost",outputs:[{name:"success",type:"bool"}],payable:false,stateMutability:"nonpayable",type:"function"},{constant:false,inputs:[{name:"_newSuccessor",type:"address"}],name:"setSuccessor",outputs:[{name:"success",type:"bool"}],payable:false,stateMutability:"nonpayable",type:"function"},{constant:false,inputs:[{name:"_tokenAddress",type:"address"},{name:"_tokens",type:"uint256"}],name:"transferAnyERC20Token",outputs:[{name:"success",type:"bool"}],payable:false,stateMutability:"nonpayable",type:"function"},{constant:false,inputs:[{name:"_newOwner",type:"address"}],name:"transferOwnership",outputs:[],payable:false,stateMutability:"nonpayable",type:"function"},{inputs:[],payable:false,stateMutability:"nonpayable",type:"constructor"},{payable:true,stateMutability:"payable",type:"fallback"},{anonymous:false,inputs:[{indexed:true,name:"postId",type:"bytes32"},{indexed:true,name:"owner",type:"address"},{indexed:false,name:"body",type:"bytes"}],name:"Posted",type:"event"},{anonymous:false,inputs:[{indexed:true,name:"_from",type:"address"},{indexed:true,name:"_to",type:"address"}],name:"OwnershipTransferred",type:"event"},{constant:true,inputs:[{name:"_owner",type:"address"},{name:"_title",type:"string"}],name:"calcPostId",outputs:[{name:"postId",type:"bytes32"}],payable:false,stateMutability:"view",type:"function"},{constant:true,inputs:[{name:"_postId",type:"bytes32"}],name:"getPost",outputs:[{name:"location",type:"address"},{name:"blockNum",type:"uint256"}],payable:false,stateMutability:"view",type:"function"},{constant:true,inputs:[],name:"getPredecessor",outputs:[{name:"",type:"address"}],payable:false,stateMutability:"view",type:"function"},{constant:true,inputs:[],name:"getRevision",outputs:[{name:"",type:"uint256"}],payable:false,stateMutability:"view",type:"function"},{constant:true,inputs:[],name:"getSuccessor",outputs:[{name:"",type:"address"}],payable:false,stateMutability:"view",type:"function"},{constant:true,inputs:[],name:"newOwner",outputs:[{name:"",type:"address"}],payable:false,stateMutability:"view",type:"function"},{constant:true,inputs:[],name:"owner",outputs:[{name:"",type:"address"}],payable:false,stateMutability:"view",type:"function"},{constant:true,inputs:[{name:"_interfaceID",type:"bytes4"}],name:"supportsInterface",outputs:[{name:"",type:"bool"}],payable:false,stateMutability:"pure",type:"function"}]
