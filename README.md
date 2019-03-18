@@ -1,4 +1,4 @@
-# TL;DR — Eternal Posting Manager
+# TL;DR — Eternal Posting Service
 
 > Get started today with the last __Posts / Notes__ app you will __EVER__ use again!
 
@@ -10,11 +10,11 @@
 
 - __https://0net.io/tldr.bit__ - Zeronet _( using Clearnet / Internet proxy )_
 
-> Latest __IPFS__ hash is __QmfAbFf4pnmAW9Ya6ogsrUJ5VFdRthKnuGxWmNJ8zRFcoz__
+> Latest __IPFS__ hash is __QmTvhT1p1iGmm9sa3MzJPzvwcPhQuD3iCe2uRFp5ww1Tz6__
 
-- [Connect using __IPFS__ powered by __cloudflare-ipfs.com__](https://cloudflare-ipfs.com/ipfs/QmfAbFf4pnmAW9Ya6ogsrUJ5VFdRthKnuGxWmNJ8zRFcoz/)
+- [Connect using __IPFS__ powered by __cloudflare-ipfs.com__](https://cloudflare-ipfs.com/ipfs/QmTvhT1p1iGmm9sa3MzJPzvwcPhQuD3iCe2uRFp5ww1Tz6/)
 
-- [Connect using __IPFS__ powered by __ipfs.infura.io__](https://ipfs.infura.io/ipfs/QmfAbFf4pnmAW9Ya6ogsrUJ5VFdRthKnuGxWmNJ8zRFcoz/)
+- [Connect using __IPFS__ powered by __ipfs.infura.io__](https://ipfs.infura.io/ipfs/QmTvhT1p1iGmm9sa3MzJPzvwcPhQuD3iCe2uRFp5ww1Tz6/)
 
 ### Is This DApp Safe & Secure?
 

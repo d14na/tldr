@@ -39,7 +39,7 @@ const vueAppManager = {
 
         /* App Summary */
         appTitle: 'TL;DR',
-        appDesc: 'Eternal Posting Manager',
+        appDesc: 'Eternal Posting Service',
         searchId: '',
 
         /* Post Summary */
