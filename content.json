@@ -10,8 +10,8 @@
    "size": 1062
   },
   "README.md": {
-   "sha512": "f921c821e9bcd2f7e3bc3834b4ff74c2ae579757988dbe43a95e8e7e064f8734",
-   "size": 46
+   "sha512": "c98652848d157191cd19ff769a01424f35fe7edc7d3d353ecfbf2cb2fe60dc54",
+   "size": 332
   },
   "abi/TLDR.json": {
    "sha512": "fdc16723b4081582810c6aa028619abde98b68d66464f9b4e0a1e168ca4ed373",
@@ -42,12 +42,12 @@
    "size": 3797
   },
   "index.html": {
-   "sha512": "da2c628188dea8b7b7176416b47b08b3815b99d26f057da195db0d44f8a878c8",
-   "size": 2257
+   "sha512": "07bd90efe5a5a020e2b9ab448ed7c7830a337255ec1f2e4cb34191a483160557",
+   "size": 2837
   },
   "js/main.js": {
-   "sha512": "732e2d194a1ffdd23e473c1b1910cb2b4f3936b3233ada843374046c35f88c05",
-   "size": 8442
+   "sha512": "4b14fbc73b742c7080c7f56b263976f3a6f62635dd06a09561069eb546aa6c55",
+   "size": 24655
   },
   "libs/buffer.js": {
    "sha512": "95676ea8b2f83c4703d844d156f12e334c8779dea73a64d42c5a8d799fc3aa26",
@@ -60,11 +60,11 @@
  },
  "ignore": "(\\.git)",
  "inner_path": "content.json",
- "modified": 1552770265,
+ "modified": 1552807429,
  "postmessage_nonce_security": true,
  "signers_sign": "G1xIVhFAK88MAg0PZrygvXRCLSfXNL7nVSNqmL0EUwlvEOkf0wFTb1WNwMqB72OiTXLB0oss0xy4AmJyKANiyx8=",
  "signs": {
-  "1TLDRQxAhGgkhF7FZU2dmUuSYvnhFSeFY": "HNKF/2RoJmXTHcbbSL7eXCrKPcF0NZvQAkRV30EXvXZNA/AB/qav+pWSBfFOEl4y1juHGcMnVuRM8HghAApmGQc="
+  "1TLDRQxAhGgkhF7FZU2dmUuSYvnhFSeFY": "HLZhDpukTBXwazI4a8WQ1NBFsRQnjprJvgIMCJR2UFJ3E+oJX1wvMRb5fehgmzh+CV6o3p3IbBHvJxncFTm+VnI="
  },
  "signs_required": 1,
  "title": "TL;DR",
