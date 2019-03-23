@@ -80,14 +80,16 @@ const vueAppManager = {
             window.Zero = new ZeroApp()
 
             console.info('App.() & Zero.() have loaded successfully!')
+        },
+        update () {
+            console.log('updating..')
 
-            $('#input').on('input', function () {
-                const markdown = marked($('#input').val())
+            const markdown = marked($('#input').val())
 
-                /* Update the markup holder. */
-                $('#preview').html(markdown)
+            console.log('markedown', markdown)
 
-            })
+            /* Update the markup holder. */
+            $('#preview').html(markdown)
         },
         async find () {
             /* Initialize provider. */
@@ -436,6 +438,11 @@ const vueAppManager = {
 
                 this.postTitle = body.title
                 this.postBody = body.body
+
+                /* Wait a moment to update. */
+                setImmediate(() => {
+                    this.update()
+                })
 
                 /* Add data to TOP of list. */
                 // this.events.unshift(data)
