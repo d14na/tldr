@@ -45,14 +45,28 @@
         </div>
     </header>
 
-    <div class="px-2 mt-2">
-        <input
-            type="text"
-            class="form-control form-control-sm"
-            id="title"
-            aria-describedby="title"
-            placeholder="Post title"
-            v-model="postTitle">
+    <div class="row px-2 mt-2">
+        <div class="col-6 pr-1">
+            <input
+                type="text"
+                class="form-control form-control-sm"
+                id="title"
+                aria-describedby="title"
+                placeholder="Post title"
+                v-model="postTitle">
+        </div>
+        <div class="col-2 pl-1">
+            <button class="btn btn-sm btn-info btn-block" @click="find">Find</button>
+        </div>
+        <div class="col-4">
+            <input
+                type="password"
+                class="form-control form-control-sm"
+                id="passphrase"
+                aria-describedby="passphrase"
+                placeholder="Passphrase"
+                v-model="passphrase">
+        </div>
     </div>
 
     <div class="containers">
