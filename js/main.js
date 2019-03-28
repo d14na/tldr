@@ -82,11 +82,7 @@ const vueAppManager = {
             console.info('App.() & Zero.() have loaded successfully!')
         },
         update () {
-            console.log('updating..')
-
             const markdown = marked($('#input').val())
-
-            console.log('markedown', markdown)
 
             /* Update the markup holder. */
             $('#preview').html(markdown)
@@ -243,9 +239,7 @@ const vueAppManager = {
         //
         // },
         async postIt () {
-            console.log('Make new post via Metamask, using Ethers')
-
-            console.log('Make new post via Metamask, using Ethers REVISED!')
+            console.log('Posting..')
 
             await ethereum.enable()
 
@@ -267,12 +261,28 @@ const vueAppManager = {
             /* Build package. */
             const pkg = { title, body }
 
-            /* Create bytes array from package. */
-            const myBytes = '0x' + Buffer.from(
-                JSON.stringify(pkg)).toString('hex')
+            // -----------------
+
+            console.log('Encrypting with passphrase:', this.passphrase)
+
+            var encrypted = CryptoJS.AES.encrypt(JSON.stringify(pkg), this.passphrase)
+
+            console.log('ENCRYPTED', encrypted)
+
+            console.log('ENCRYPTED (string)', encrypted.toString())
+
+            let encryptedBuffer = Buffer.from(encrypted.toString(), 'base64')
+
+            console.log('ENCRYPTED (buffer)', encryptedBuffer)
+
+            let encryptedBytes = '0x' + encryptedBuffer.toString('hex')
+
+            console.log('ENCRYPTED (bytes)', encryptedBytes)
+
+            // -----------------
 
             // Call the contract, getting bsack the transaction
-            let tx = await contract.savePost(title, myBytes)
+            let tx = await contract.savePost(title, encryptedBytes)
 
             console.log('TX', tx)
 
@@ -347,6 +357,14 @@ const vueAppManager = {
 
         },
         async loadPost () {
+            /* Clear post body. */
+            this.postBody = ''
+
+            /* Wait a moment to update. */
+            setImmediate(() => {
+                this.update()
+            })
+
             const searchId = this.searchId
 
             if (searchId.slice(0, 2) !== '0x') {
@@ -384,69 +402,101 @@ const vueAppManager = {
             // TEMP FOR TESTING PURPOSES ONLY
             let postData = await contract.getPost(searchId)
 
-            // console.log('GET POST', postData)
+            console.log('GET POST', postData)
 
             const blockNum = postData.blockNum
             const location = postData.location
 
-            console.log('blockNum / location', blockNum.toString(), location)
+            /* Validate location. */
+            if (location === '0x0000000000000000000000000000000000000000') {
+                console.log('New entry in progress..')
+            } else {
+                console.log('blockNum / location', blockNum.toString(), location)
 
-            /* Set event log topic. */
-            const topic = ethers.utils.id('Posted(bytes32,address,bytes)')
+                /* Set event log topic. */
+                const topic = ethers.utils.id('Posted(bytes32,address,bytes)')
 
-            /* Set event log filter. */
-            const filter = {
-                address: contractAddress,
-                topics: [ topic ]
-            }
-
-            /* Reset to event block. */
-            provider.resetEventsBlock(blockNum - 1)
-
-            /* Listening for ONE event. */
-            provider.once(filter, (_result) => {
-                // console.info('Log results', _result)
-
-                /* Parse the log details. */
-                const parsed = contract.interface.parseLog(_result)
-
-                // console.info('Parsed log results', parsed)
-
-                /* Set post id. */
-                const postId = parsed['values']['postId']
-
-                /* Set owner. */
-                const owner = parsed['values']['owner']
-
-                /* Set body. */
-                let body = parsed['values']['body']
-
-                try {
-                    /* Parse bytes. */
-                    body = Buffer.from(body.slice(2), 'hex').toString()
-
-                    /* Parse info. */
-                    body = JSON.parse(body)
-                } catch (_err) {
-                    console.error('ERROR parsing info', _err, body)
+                /* Set event log filter. */
+                const filter = {
+                    address: contractAddress,
+                    topics: [ topic ]
                 }
 
-                /* Format parsed data. */
-                const data = { postId, owner, body }
+                /* Reset to event block. */
+                provider.resetEventsBlock(blockNum - 1)
 
-                console.info('Post data', data)
+                /* Listening for ONE event. */
+                provider.once(filter, (_result) => {
+                    // console.info('Log results', _result)
 
-                this.postTitle = body.title
-                this.postBody = body.body
+                    /* Parse the log details. */
+                    const parsed = contract.interface.parseLog(_result)
 
-                /* Wait a moment to update. */
-                setImmediate(() => {
-                    this.update()
+                    console.info('Parsed log results', parsed)
+
+                    /* Set post id. */
+                    const postId = parsed['values']['postId']
+
+                    /* Set owner. */
+                    const owner = parsed['values']['owner']
+
+                    /* Set body. */
+                    let body = parsed['values']['body']
+
+                    try {
+                        let backToString = Buffer.from(body.slice(2), 'hex').toString('base64')
+
+                        console.log('BACKTOSTRING', backToString)
+
+                        var decrypted = CryptoJS.AES.decrypt(backToString, this.passphrase)
+
+                        console.log('DECRYPTED', decrypted)
+
+                        let decryptedString = decrypted.toString(CryptoJS.enc.Utf8)
+
+                        console.log('DECRYPTED (string)', decryptedString)
+
+                        body = JSON.parse(decryptedString)
+
+                        console.log('DECRYPTED (JSON)', body)
+
+                        /* Parse bytes. */
+                        // body = Buffer.from(body.slice(2), 'hex').toString()
+
+                        /* Parse info. */
+                        // body = JSON.parse(body)
+
+                        /* Format parsed data. */
+                        const data = { postId, owner, body }
+
+                        console.info('Post data', data)
+
+                        // this.postTitle = body.title
+
+                        /* Set post body. */
+                        this.postBody = body.body
+
+                        /* Wait a moment to update. */
+                        setImmediate(() => {
+                            this.update()
+                        })
+
+                        /* Add data to TOP of list. */
+                        // this.events.unshift(data)
+                    } catch (_err) {
+                        console.error('ERROR parsing info', _err, body)
+
+                        // console.error('_err.message', _err.message)
+
+                        if (
+                            _err.message === 'Malformed UTF-8 data' ||
+                            _err.message === 'Unexpected end of JSON input'
+                        ) {
+                            alert('Decryption failed! Please check your passphrase..')
+                        }
+                    }
                 })
-
-                /* Add data to TOP of list. */
-                // this.events.unshift(data)
-            })
+            }
         }
     }
 }
